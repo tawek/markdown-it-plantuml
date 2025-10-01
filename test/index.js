@@ -46,4 +46,10 @@ describe('markdown-it-plantuml', function () {
     { header: true },
     parserWithCustomServer
   );
+
+  generate(
+    path.join(__dirname, 'fixtures/fence.txt'),
+    { header: true },
+    defaultParser
+  );
 });
