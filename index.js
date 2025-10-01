@@ -225,7 +225,8 @@ module.exports = function umlPlugin(md, options) {
       .slice(startLine + 1, nextLine)
       .map(function (line, idx) {
         // Remove leading spaces equal to opening fence indentation
-        var shift = state.sCount[startLine + 1 + idx];
+        var sCountIdx = startLine + 1 + idx;
+        var shift = (sCountIdx < state.sCount.length) ? state.sCount[sCountIdx] : 0;
         if (shift > len) { shift = len; }
         return line.slice(shift);
       })
